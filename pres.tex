@@ -4,14 +4,18 @@
 \usepackage{tikz}
 %vectors, matrices, complex numbers, big O notation, grafentheorie, vertaling van probleem in algoritme, trigonometrie
 
-\newcommand{\drawtdvec}[2]{
-\begin{tikzpicture}[scale=0.70]
+\newcommand{\drawgridaxes}{
 \draw[step=1cm,gray,very thin] (-3,-3) grid (3,3);
-\draw[red, thick, ->] (0,0) -- (#1,#2);
 \draw[thick,->] (0,0) -- (3,0) node[anchor=north west] {x};
 \draw[thick,->] (0,0) -- (0,3) node[anchor=south east] {y};
 \draw[thick,->] (0,0) -- (-3,0);
 \draw[thick,->] (0,0) -- (0,-3);
+}
+
+\newcommand{\drawtdvec}[2]{
+\begin{tikzpicture}[scale=0.70]
+\drawgridaxes
+\draw[red, thick, ->] (0,0) -- (#1,#2);
 \end{tikzpicture}
 }
 
@@ -62,11 +66,41 @@
 	\frame {
 		\frametitle{Scaling with negative number}
 		\drawbasicvec
-		\begin{equation*} \textbf{U} = \begin{bmatrix} 0.2 & 0.3 \\ 0.5 & 0.6 \end{bmatrix} \end{equation*}
+	}
+	
+	\frame {
+		\frametitle{Scaling all happens on the same line}
+		\begin{tikzpicture}[scale=0.70]
+        \drawgridaxes
+        \draw[red, thick, ->] (0,0) -- (1,2);
+        \draw[green, thick, ->] (0,0) -- (-1,-2);
+        \draw[blue, ->] (0,0) -- (1.5,3);
+        \draw[purple, ->] (0,0) -- (-1.5,-3);
+        \end{tikzpicture}
+	}
+	
+	\frame {
+		\frametitle{Matrix, representation}
+		\begin{equation*} \textbf{M} = \begin{bmatrix} 0.2 & 0.3 \\ 0.5 & 0.6 \end{bmatrix} \end{equation*}
+		\begin{equation*} \textbf{N} = \begin{bmatrix} 0.2 & 0.3 & 5 & 6 \\ 0.5 & 0.6 & 7 & 8 \end{bmatrix} \end{equation*}
 	}
 	\frame {
-		\frametitle{Matrix}
-		\begin{equation*} \textbf{U} = \begin{bmatrix} 0.2 & 0.3 \\ 0.5 & 0.6 \end{bmatrix} \end{equation*}
+		\frametitle{Multiplying matrix with a vector}
+		\begin{equation*} \textbf{M} = \begin{bmatrix} a & b \\ c & d \end{bmatrix} * \begin{bmatrix} v1 \\ v2 \end{bmatrix} = \begin{bmatrix} a * v1 + b * v2 \\ c * v1 + d * v2 \end{bmatrix}\end{equation*}
+		\begin{equation*} \textbf{M} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix} * \begin{bmatrix} 5 \\ 6 \end{bmatrix} = \begin{bmatrix} 1 * 5 + 2 * 6 \\ 3 * 5 + 4 * 6 \end{bmatrix} = \begin{bmatrix} 17 \\ 39 \end{bmatrix}\end{equation*}
+	}
+	\frame {
+		\frametitle{Identity matrix}
+		\begin{equation*} \textbf{M} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} * \begin{bmatrix} 5 \\ 6 \end{bmatrix} = \begin{bmatrix} 1 * 5 + 0 * 6 \\ 0 * 5 + 1 * 6 \end{bmatrix} = \begin{bmatrix} 5 \\ 6 \end{bmatrix}\end{equation*}
+	}
+	\frame {
+		\frametitle{90 degrees rotation matrix}
+		\begin{equation*} \textbf{M} = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} * \begin{bmatrix} 1 \\ 2 \end{bmatrix} = \begin{bmatrix} 0 * 1 + -1 * 2 \\ 1 * 1 + 0 * 2 \end{bmatrix} = \begin{bmatrix} -2 \\ 1 \end{bmatrix}\end{equation*}
+		\begin{tikzpicture}[scale=0.70]
+        \drawgridaxes
+        \draw[red, thick, ->] (0,0) -- (1,2);
+        \draw[green, thick, ->] (0,0) -- (-2,1);
+        \end{tikzpicture}
 	}
 	\frame {
 		\frametitle{ABC formula}
