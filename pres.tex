@@ -40,6 +40,9 @@
 }
 }
 
+\definecolor{darkgreen}{RGB}{0,150,0}
+
+
 \title{Some math}
 \subtitle{Random things you might encounter in the core or afterwards}
 
@@ -62,11 +65,6 @@
 	{\drawbasicvec}
 	{\begin{equation*} -1.5 * \vec{V} = \begin{bmatrix} -1.5 \\ -3  \end{bmatrix} \end{equation*}
 		\drawtdvec{-1.5}{-3}}
-	
-	\frame {
-		\frametitle{Scaling with negative number}
-		\drawbasicvec
-	}
 	
 	\frame {
 		\frametitle{Scaling all happens on the same line}
@@ -102,6 +100,77 @@
         \draw[green, thick, ->] (0,0) -- (-2,1);
         \end{tikzpicture}
 	}
+	\frame {
+		\frametitle{Sin and Cos, rotation from x-axis}
+		\begin{tikzpicture}[scale=2.10]
+		\draw[step=1cm,gray,very thin] (-1,-1) grid (1,1);
+        \draw[thin,->] (0,0) -- (1,0) node[anchor=north west] {x};
+        \draw[thin,->] (0,0) -- (0,1) node[anchor=south east] {y};
+        \draw[thin,->] (0,0) -- (-1,0);
+        \draw[thin,->] (0,0) -- (0,-1);
+        \draw[red, thick, ->] (0,0) -- (0.5,0.86);
+        \draw[green, thick, ->] (0,0) -- (0.5,0) node[below] {Cos $\theta$};
+        \draw[purple, thick, ->] (0,0) -- (0,0.86) node[anchor=north east] {Sin $\theta$};
+        \draw[blue] (0.2,0) arc (0:60:0.2cm) node[right] {$\theta$};
+        \end{tikzpicture}
+	}
+	
+	\frame {
+		\frametitle{Sin and Cos, rotation from y-axis}
+		\begin{tikzpicture}[scale=2.10]
+		\draw[step=1cm,gray,very thin] (-1,-1) grid (1,1);
+        \draw[thin,->] (0,0) -- (1,0) node[anchor=north west] {x};
+        \draw[thin,->] (0,0) -- (0,1) node[anchor=south east] {y};
+        \draw[thin,->] (0,0) -- (-1,0);
+        \draw[thin,->] (0,0) -- (0,-1);
+        \draw[red, thick, ->] (0,0) -- (-0.86,0.5);
+        \draw[darkgreen, thick, ->] (0,0) -- (-0.86,0) node[below] {-Sin $\theta$};
+        \draw[purple, thick, ->] (0,0) -- (0,0.5) node[right] {Cos $\theta$};
+        \draw[blue] (0,0.2) arc (90:150:0.2cm) node[above] {$\theta$};
+        \end{tikzpicture}
+	}
+	
+	\frame {
+		\frametitle{Rotation matrix}
+		\begin{equation*} \textbf{M} = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos( \theta) \end{bmatrix} * \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} \cos(\theta) * x - \sin(\theta) * y \\ \sin(\theta)  * x + \cos(\theta) * y \end{bmatrix}
+		\end{equation*}
+	}
+	
+	\frame {
+		\frametitle{Complex numbers}
+		\begin{equation*} c = a + bi
+		\end{equation*}
+	    \begin{equation*} i^2 = -1
+		\end{equation*}
+	}
+	
+	\frame {
+		\frametitle{Complex numbers, addition}
+		\begin{equation*} (a_1 + b_1i) + a_2 = (a_1 + a_2) + b_1i 
+		\end{equation*}
+		\begin{equation*} (a_1 + b_1i) + b_2i = a_1 + (b_1 + b_2)i 
+		\end{equation*}
+		\begin{equation*} (a_1 + b_1i) + (a_2 + b_2i) = (a_1 + a_2) + (b_1 + b_2)i 
+		\end{equation*}
+	}
+	
+	\frame {
+		\frametitle{Complex numbers, multiplication}
+		\begin{equation*} (a_1 + b_1i) * (a_2 + b_2i) = (a_1 * a_2) + (a_1 * b_2i) + (b_1i * a_2) + (b_1i * b_2i) 
+		\end{equation*}
+		\begin{equation*}
+		= (a_1 * a_2) + (a_1 * b_2 + b_1 * a_2)i + (b_1 * b_2)i^2 
+		\end{equation*}
+			\begin{equation*}
+		=  a_1 * a_2 + (a_1 * b_2 + b_1 * a_2)i - (b_1 * b_2)
+			\end{equation*}
+		\begin{equation*}
+		= (a_1 * a_2 - b_1 * b_2) + (a_1 * b_2 + b_1 * a_2)i
+		\end{equation*}
+	}
+	
+	%https://en.wikipedia.org/wiki/Complex_number#Matrix_representation_of_complex_numbers
+	
 	\frame {
 		\frametitle{ABC formula}
 		\[\frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}\]
