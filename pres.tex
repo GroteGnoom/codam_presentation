@@ -2,8 +2,8 @@
 \documentclass{beamer}
 %https://en.wikibooks.org/wiki/LaTeX/Macros
 \usepackage{tikz}
-%vectors, matrices, complex numbers, big O notation, grafentheorie, vertaling van probleem in algoritme, trigonometrie
-
+%vectors, matrices, complex numbers,  trigonometrie, big O notation, grafentheorie, vertaling van probleem in algoritme,
+\useoutertheme{infolines}
 \newcommand{\drawgridaxes}{
 \draw[step=1cm,gray,very thin] (-3,-3) grid (3,3);
 \draw[thick,->] (0,0) -- (3,0) node[anchor=north west] {x};
@@ -46,7 +46,6 @@
 \title{Some math}
 \subtitle{Random things you might encounter in the core or afterwards}
 
-%\usetheme{lucid}
 \begin{document}
 	\frame {
 		\titlepage
@@ -74,6 +73,28 @@
         \draw[green, thick, ->] (0,0) -- (-1,-2);
         \draw[blue, ->] (0,0) -- (1.5,3);
         \draw[purple, ->] (0,0) -- (-1.5,-3);
+        \end{tikzpicture}
+	}
+	
+	\frame {
+		\frametitle{Adding vectors, or splitting up in components}
+		\begin{equation*} \begin{bmatrix} 2 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ 1 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}\end{equation*}
+		\begin{tikzpicture}[scale=0.70]
+        \drawgridaxes
+        \draw[red, thick, ->] (0,0) -- (2,0);
+        \draw[green, thick, ->] (0,0) -- (0,1);
+        \draw[blue, thick, ->] (0,0) -- (2,1);
+        \end{tikzpicture}
+	}
+	
+	\frame {
+		\frametitle{Subtracting vectors}
+		\begin{equation*} \begin{bmatrix} 2 \\ 1 \end{bmatrix} - \begin{bmatrix} 2 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}\end{equation*}
+		\begin{tikzpicture}[scale=0.70]
+        \drawgridaxes
+        \draw[red, thick, ->] (0,0) -- (2,0);
+        \draw[green, thick, ->] (0,0) -- (0,1);
+        \draw[blue, thick, ->] (0,0) -- (2,1);
         \end{tikzpicture}
 	}
 	
@@ -169,23 +190,103 @@
 		\end{equation*}
 	}
 	
+	\frame {
+		\frametitle{Complex numbers, vector and matrix}
+		\begin{equation*} (a_1 + b_1i) * (a_2 + b_2i)
+		\end{equation*}
+		\begin{equation*}
+		= (a_1 * a_2 - b_1 * b_2) + (a_1 * b_2 + b_1 * a_2)i
+		\end{equation*}
+		\begin{equation*}
+		= \begin{bmatrix} a_1 & -b_1 \\ b_1 & a_1 \end{bmatrix} * \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}
+		\end{equation*}
+	}
+	
+	\frame {
+		\frametitle{Complex numbers, rotation}
+		\begin{equation*} (\cos(\theta) + i*\sin(\theta)) * (a_2 + b_2i)
+		\end{equation*}
+		\begin{equation*}
+		= \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos(\theta) \end{bmatrix} * \begin{bmatrix} a_2 \\ b_2 \end{bmatrix}
+		\end{equation*}
+	}
+	
+	\frame {
+		\frametitle{Complex numbers, rotation picture}
+		\begin{equation*} (\cos(\theta) + i*\sin(\theta)) * (a_2 + b_2i)
+		\end{equation*}
+		\begin{tikzpicture}[scale=2.10]
+		\draw[step=1cm,gray,very thin] (-1,-1) grid (1,1);
+        \draw[thin,->] (0,0) -- (1,0) node[anchor=north west] {Real};
+        \draw[thin,->] (0,0) -- (0,1) node[anchor=south east] {Imaginary};
+        \draw[thin,->] (0,0) -- (-1,0);
+        \draw[thin,->] (0,0) -- (0,-1);
+        \draw[red, thick, ->] (0,0) -- (-0.86,0.5);
+        \draw[darkgreen, thick, ->] (0,0) -- (-0.86,0) node[below] {-Sin $\theta$};
+        \draw[purple, thick, ->] (0,0) -- (0,0.5) node[right] {Cos $\theta$};
+        \draw[blue] (0,0.2) arc (90:150:0.2cm) node[above] {$\theta$};
+        \end{tikzpicture}
+	}
+	
 	%https://en.wikipedia.org/wiki/Complex_number#Matrix_representation_of_complex_numbers
 	
 	\frame {
+		\begin{equation*} a*x^2 + b*x + c = 0
+		\end{equation*}
 		\frametitle{ABC formula}
 		\[\frac{-b \pm \sqrt{b^2 - 4 a c}}{2a}\]
+		\begin{equation*} b^2 - 4 a c >= 0
+		\end{equation*}
 	}
-	\frame{
-		\frametitle{Sample Page 2}
-		\framesubtitle{An Example of Lists}
-		\begin{itemize}
-			\item 1
-			\item 2
-			\item 3
-		\end{itemize}
+	
+	\frame {
+		\begin{tikzpicture}[scale=0.7]
+        \drawgridaxes
+        \draw[purple, thick, ->] (-2,0) -- (-1,0.25);
+        \draw[blue] (0,0) circle (1cm);
+        \end{tikzpicture}
 	}
-	\frame{
-	    \frametitle{Paragraph Content}
-	    This is a paragraph.
+	
+	\frame {
+		\begin{tikzpicture}[scale=0.7]
+        \drawgridaxes
+        \draw[purple, thick, ->] (-2,0) -- (-1,0.25);
+        \draw[purple, thick] (-2,0) -- (3,1.25);
+        \draw[blue] (0,0) circle (1cm);
+        \end{tikzpicture}
 	}
+	
+	\frame {
+
+		\begin{equation*} \vec{s} + t * \vec{d} = \vec{p}
+		\end{equation*}
+		\begin{equation*} (\vec{p})^2 = r^2
+		\end{equation*}
+		\begin{equation*} (\vec{s} + t * \vec{d})^2 = r^2
+		\end{equation*}
+		\begin{tikzpicture}[scale=0.7]
+        \drawgridaxes
+        \draw[purple, thick, ->] (-2,0) -- (-1,0.25);
+        \draw[purple, thick] (-2,0) -- (3,1.25);
+        \draw[blue] (0,0) circle (1cm);
+        \end{tikzpicture}
+	}
+	
+		\frame {
+		\begin{equation*} (\vec{s} + t * \vec{d})^2 = r^2
+		\end{equation*}
+		\begin{equation*} (\vec{s} + t * \vec{d})^2 - r^2 = 0
+		\end{equation*}
+		\begin{equation*} \vec{s}^2 + t^2 * \vec{d}^2 +2(\vec{s} + t * \vec{d})- r^2 = 0
+		\end{equation*}
+		\begin{equation*}  t^2 * \vec{d}^2 + t * 2(\vec{s} * \vec{d}) - r^2 + \vec{s}^2 = 0
+		\end{equation*}
+		\begin{tikzpicture}[scale=0.7]
+        \drawgridaxes
+        \draw[purple, thick, ->] (-2,0) -- (-1,0.25);
+        \draw[purple, thick] (-2,0) -- (3,1.25);
+        \draw[blue] (0,0) circle (1cm);
+        \end{tikzpicture}
+	}
+
 \end{document}
