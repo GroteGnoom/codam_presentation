@@ -1,3 +1,4 @@
+
 \documentclass{beamer}
 \usetheme{Copenhagen}
 %https://en.wikibooks.org/wiki/LaTeX/Macros
@@ -165,6 +166,11 @@
         \end{tikzpicture}
 	}
 	
+	\frame {
+		\frametitle{Code for inner product}
+		\includegraphics{inner_product_code.png}
+	}
+	
 	\frame{
 	    \frametitle{Movement}
 	    \begin{center}
@@ -299,6 +305,16 @@
 		\end{alertblock}
 	}
 	
+		\frame {
+		\frametitle{Code for hitting the circle}
+		\includegraphics[width=1\columnwidth]{hitting_the_circle_code.png}
+	}
+	
+		\frame {
+		\frametitle{Result of hitting the circle}
+		\includegraphics[width=1\columnwidth]{hitting_the_circle_result.png}
+	}
+	
 	\frame {
 		\frametitle{And then...}
 		\includegraphics[width=1\columnwidth]{miniRT}
@@ -331,6 +347,11 @@
 	}
 	
 	\frame {
+		\frametitle{Code for adding complex numbers}
+		\includegraphics[width=1\columnwidth]{cpx_add_code.png}
+	}
+	
+	\frame {
 		\frametitle{Multiplying complex numbers}
 		\begin{equation*} (a_1 + b_1i) * (a_2 + b_2i) = (a_1 * a_2) + (a_1 * b_2i) + (b_1i * a_2) + (b_1i * b_2i) 
 		\end{equation*}
@@ -352,6 +373,16 @@
 	}
 	
 	\frame {
+		\frametitle{Code for multiplying complex numbers}
+		\includegraphics[width=1\columnwidth]{cpx_multiply_code.png}
+	}
+	
+	\frame {
+		\frametitle{Code for taking the squared length of complex numbers}
+		\includegraphics[width=1\columnwidth]{cpx_ls_code.png}
+	}
+	
+	\frame {
 		\frametitle{Complex numbers, rotation}
 		\begin{equation*} (\cos(\theta) + i*\sin(\theta)) * (a + bi)
 		\end{equation*}
@@ -361,14 +392,80 @@
 	}
 	
 	\frame {
-	\frametitle{Julia set}
+	\frametitle{Julia set, Mandelbrot set}
 	\begin{center}
 	$f = z^2 + c$
 	\end{center}
 	}
 	
 	\frame {
-		\frametitle{fractal}
+	\frametitle{Mandelbrot}
+
+	\begin{block}{}
+		\begin{center}
+	$z = z^2 + c$ \\
+			\end{center}
+	\end{block}
+
+	\begin{block}{}
+		\begin{center}
+	$0.5 = 0^2 + 0.5$ \\
+	$0.75 = 0.5^2 + 0.5$ \\
+	$1.0625 = 0.75^2 + 0.5$ \\
+		\end{center}
+	\end{block}
+	
+		\begin{block}{}
+			\begin{center}
+
+	$0.25 = 0^2 + 0.25$ \\
+	$0.3125 = 0.25^2 + 0.25$ \\
+	$0.0.3477 = 0.3125^2 + 0.25$
+		\end{center}
+		\end{block}
+
+	}
+	
+	\frame {
+		\frametitle{Mandelbrot code}
+		\includegraphics[width=1\columnwidth]{mandelbrot code.png}
+	}
+	
+	\frame {
+		\frametitle{Mandelbrot result}
+		\includegraphics[width=1\columnwidth]{mandelbrot_result.png}
+	}
+	
+		\frame {
+	\frametitle{Julia}
+
+	\begin{block}{}
+		\begin{center}
+	$z = z^2 + c$ \\
+			\end{center}
+	\end{block}
+
+	\begin{block}{}
+		\begin{center}
+	$z = (x + yi)^2 + (-0.4 + 0.6i)$ \\
+		\end{center}
+	\end{block}
+	
+
+	}
+	
+	\frame {
+		\frametitle{Julia code}
+		\includegraphics[width=1\columnwidth]{julia_code.png}
+	}
+	
+	\frame {
+		\frametitle{Julia result}
+		\includegraphics[width=1\columnwidth]{julia_result.png}
+	}
+	
+	\frame {
+		\frametitle{rvan-mee}
 		\includegraphics[width=1\columnwidth]{fractol_rvanmee.png}
 	}
 	
