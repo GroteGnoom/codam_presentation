@@ -95,7 +95,7 @@
 		
 	\frame {
 		\frametitle{Code for scaling a vector}
-		\includegraphics{scale_code}
+		\includegraphics[width=1\columnwidth]{scale_code}
 	}
 		
 	\tcframe{Scaling with negative number}
@@ -103,8 +103,8 @@
 	{\begin{equation*} -1.5 * \vec{V} = \begin{bmatrix} -1.5 \\ -3  \end{bmatrix} \end{equation*}
 		\drawtdvec{-1.5}{-3}}
 	
-	\frame {
-		\frametitle{Scaling all happens on the same line}
+	\tcframe {Scaling all happens on the same line}
+		{
 		\begin{tikzpicture}[scale=0.70]
         \drawgridaxes
         \draw[red, thick, ->] (0,0) -- (1,2);
@@ -112,7 +112,12 @@
         \draw[blue, ->] (0,0) -- (1.5,3);
         \draw[purple, ->] (0,0) -- (-1.5,-3);
         \end{tikzpicture}
-	}
+        }
+        {
+        \begin{equation*} t * \vec{v}
+        \end{equation*}
+        }
+	
 	
 	\frame {
 		\frametitle{Adding vectors, or splitting up in components}
@@ -142,10 +147,16 @@
         \end{tikzpicture}
 	}
 	
-	\frame {
-		\frametitle{Inner product} %TODO
+	\tcframe
+	{Inner product}
+	{
 		\begin{equation*} \begin{bmatrix} 2 \\ 1 \end{bmatrix} \cdot \begin{bmatrix} 3 \\ 4 \end{bmatrix} = 2*3 + 1 * 4\end{equation*}
-		\begin{equation*} \begin{bmatrix} a \\ b \end{bmatrix} \cdot \begin{bmatrix} a \\ b \end{bmatrix} = a*a + b*b\end{equation*}
+		\begin{equation*} \vec{c}^2 = \begin{bmatrix} a \\ b \end{bmatrix} \cdot \begin{bmatrix} a \\ b \end{bmatrix} = a*a + b*b\end{equation*}
+		\begin{block}{}
+			\begin{equation*} a^2 + b^2 = c^2\end{equation*}
+		\end{block}
+		}
+		{
 		\begin{tikzpicture}[scale=0.70]
         \drawgridaxes
         \draw[red, thick, ->] (0,0) -- (2,0) node[midway, below] {a};
@@ -155,9 +166,9 @@
 	}
 	
 		\frame {
-		\frametitle{Inner product, projection} %TODO
-		\begin{equation*} \begin{bmatrix} 1 \\ 0 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 2 \end{bmatrix} = 1*1 + 0 * 2\end{equation*}
-		\begin{equation*} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \cdot \begin{bmatrix} 1 \\ 2 \end{bmatrix} = 0*1 + 1*2\end{equation*}
+		\frametitle{Inner product, projection}
+		\begin{equation*} \begin{bmatrix} 1 \\ 0 \end{bmatrix} \cdot \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 1*2 + 0 * 1 = 2 \end{equation*}
+		\begin{equation*} \begin{bmatrix} 0 \\ 1 \end{bmatrix} \cdot \begin{bmatrix} 2 \\ 1 \end{bmatrix} = 0*2 + 1*1 = 1 \end{equation*}
 		\begin{tikzpicture}[scale=0.70]
         \drawgridaxes
         \draw[red, thick, ->] (0,0) -- (2,0);
@@ -169,6 +180,11 @@
 	\frame {
 		\frametitle{Code for inner product}
 		\includegraphics{inner_product_code.png}
+	}
+	
+	\frame {
+		\frametitle{Vectored}
+		\includegraphics{You_Just_Got_Vectored.jpg}
 	}
 	
 	\frame{
@@ -246,7 +262,7 @@
 	    
 	\frame {
 		\frametitle{Rotation matrix}
-		\begin{equation*} \textbf{M} = \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos( \theta) \end{bmatrix} * \begin{bmatrix} x \\ y \end{bmatrix} = \begin{bmatrix} \cos(\theta) * x - \sin(\theta) * y \\ \sin(\theta)  * x + \cos(\theta) * y \end{bmatrix}
+		\begin{equation*} \begin{bmatrix} \cos(\theta) & -\sin(\theta) \\ \sin(\theta) & \cos( \theta) \end{bmatrix}
 		\end{equation*}
 	}
 	
@@ -272,7 +288,7 @@
 		}
 
 	\frame {
-	    \frametitle{ABC formula}
+	    \frametitle{Quadratic formula}
 	   \begin{block}{}
 		\begin{equation*} t^2*a + t*b + c = 0
 		\end{equation*}
@@ -289,7 +305,7 @@
 	}
 	
 	\frame {
-	    \frametitle{ABC formula}
+	    \frametitle{Quadratic formula}
 	    \begin{equation*}  t^2 * \vec{d}^2 + t * 2(\vec{s} \cdot \vec{d}) + \vec{s}^2 - r^2 = 0
 		\end{equation*}
 				\begin{equation*} a = \vec{d}^2
@@ -312,7 +328,12 @@
 	
 		\frame {
 		\frametitle{Result of hitting the circle}
-		\includegraphics[width=1\columnwidth]{hitting_the_circle_result.png}
+		\includegraphics[width=0.4\columnwidth]{hitting_the_circle_result.png}
+	}
+	
+	\frame {
+		\frametitle{3D version}
+		\includegraphics[width=1\columnwidth]{minirt_mandatory.png}
 	}
 	
 	\frame {
@@ -360,7 +381,12 @@
 		\end{equation*}
 	}
 	
-	\tcframe{Multiplying complex numbers}
+		\frame {
+		\frametitle{Code for multiplying complex numbers}
+		\includegraphics[width=1\columnwidth]{cpx_multiply_code.png}
+	}
+	
+	\tcframe{Multiplying complex numbers example}
 		{\begin{equation*} i * (2 + 1i) = -1 + 2i  
 		\end{equation*}
 	}
@@ -372,15 +398,9 @@
 	\end{tikzpicture}
 	}
 	
-	\frame {
-		\frametitle{Code for multiplying complex numbers}
-		\includegraphics[width=1\columnwidth]{cpx_multiply_code.png}
-	}
+
 	
-	\frame {
-		\frametitle{Code for taking the squared length of complex numbers}
-		\includegraphics[width=1\columnwidth]{cpx_ls_code.png}
-	}
+
 	
 	\frame {
 		\frametitle{Complex numbers, rotation}
@@ -392,9 +412,14 @@
 	}
 	
 	\frame {
+		\frametitle{Code for taking the squared length of complex numbers}
+		\includegraphics[width=1\columnwidth]{cpx_ls_code.png}
+	}
+	
+	\frame {
 	\frametitle{Julia set, Mandelbrot set}
 	\begin{center}
-	$f = z^2 + c$
+	$z = z^2 + c$
 	\end{center}
 	}
 	
@@ -409,18 +434,31 @@
 
 	\begin{block}{}
 		\begin{center}
-	$0.5 = 0^2 + 0.5$ \\
-	$0.75 = 0.5^2 + 0.5$ \\
-	$1.0625 = 0.75^2 + 0.5$ \\
+	%$0.5 = 0^2 + 0.5$ \\
+	%$0.75 = 0.5^2 + 0.5$ \\
+	%$1.0625 = 0.75^2 + 0.5$ \\
+	$1 = 0^2 + 1$ \\
+	$2 = 1^2 + 1$ \\
+	$5 = 2^2 + 1$ \\
 		\end{center}
 	\end{block}
+	
+			\begin{block}{}
+			\begin{center}
+
+	$0 = 0^2 + 0$ \\
+
+		\end{center}
+		\end{block}
 	
 		\begin{block}{}
 			\begin{center}
 
 	$0.25 = 0^2 + 0.25$ \\
 	$0.3125 = 0.25^2 + 0.25$ \\
-	$0.0.3477 = 0.3125^2 + 0.25$
+	$0.3477 = 0.3125^2 + 0.25$ \\
+	... \\
+	$0.25 = 0.5^2 + 0.25$
 		\end{center}
 		\end{block}
 
@@ -434,24 +472,6 @@
 	\frame {
 		\frametitle{Mandelbrot result}
 		\includegraphics[width=1\columnwidth]{mandelbrot_result.png}
-	}
-	
-		\frame {
-	\frametitle{Julia}
-
-	\begin{block}{}
-		\begin{center}
-	$z = z^2 + c$ \\
-			\end{center}
-	\end{block}
-
-	\begin{block}{}
-		\begin{center}
-	$z = (x + yi)^2 + (-0.4 + 0.6i)$ \\
-		\end{center}
-	\end{block}
-	
-
 	}
 	
 	\frame {
